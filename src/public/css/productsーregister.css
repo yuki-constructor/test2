@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .logo {
+    color: #f9bd25;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    font-family:  "Times New Roman";
+    font-style:italic;
+  }
+
+  main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 72px);
+  }
+
+  .form-container {
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  .form-required {
+    color: rgb(228, 223, 223);
+    background-color: red;
+    font-size: 12px;
+    margin-left: 5px;
+    padding: 3px 5px;
+  }
+
+  .form__input::placeholder {
+    color: #c4c0c0;
+  }
+
+  .form-optional {
+    color: #f10c0c;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
+  input[type="text"],
+  /* input[type="file"], */
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+
+  .checkbox-group label {
+    margin-right: 40px;
+    font-size: 14px;
+    display: inline-block;
+  }
+
+  .checkbox-group input {
+    margin-right: 5px;
+  }
+
+  .form__button {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form__cancel-button {
+    width: 150px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .form__submit-button {
+    width: 150px;
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #ebce3c;
+  }
+
+  .form__cancel-button:hover
+  {
+    background-color: #bdbdbd;
+  }
+
+  .form__submit-button:hover
+  {
+    background-color: #a78214;
+  }
+
