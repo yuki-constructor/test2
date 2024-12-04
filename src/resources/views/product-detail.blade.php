@@ -14,7 +14,7 @@
 
           <!-- 左側: 商品画像とファイル選択 -->
             <div class="product-image">
-                <img src="img/kiwi.png" alt="">
+                <img src="{{asset("storage/photos/kiwi.png" )}}" alt="">
                 <label for="file-upload" class="product-image__label">ファイルを選択</label>
                 <input type="file" id="file-upload">
             </div>

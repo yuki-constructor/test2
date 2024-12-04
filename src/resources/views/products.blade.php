@@ -31,42 +31,42 @@
 
             <section class="product-list">
               <div class="product">
-                 <img src="img/kiwi.png" alt="キウイ" class="product__img">
+                 <img src="{{asset("storage/photos/kiwi.png" )}}" alt="キウイ" class="product__img">
                    <div class="product__description">
                     <p>キウイ</p>
                     <p>¥800</p>
                 </div>
               </div>
                 <div class="product">
-                  <img src="img/strawberry.png" alt="ストロベリー"  class="product__img">
+                  <img src="{{asset("storage/photos/strawberry.png" )}}" alt="ストロベリー"  class="product__img">
                    <div class="product__description">
                       <p>ストロベリー</p>
                         <p>¥1200</p>
                      </div>
                  </div>
                  <div class="product">
-                  <img src="img/orange.png" alt="オレンジ"  class="product__img">
+                  <img src="{{asset("storage/photos/orange.png" )}}" alt="オレンジ"  class="product__img">
                    <div class="product__description">
                     <p>オレンジ</p>
                     <p>¥850</p>
                 </div>
               </div>
                 <div class="product">
-                  <img src="img/watermelon.png" alt="スイカ"  class="product__img">
+                  <img src="{{asset("storage/photos/watermelon.png" )}}" alt="スイカ"  class="product__img">
                    <div class="product__description">
                     <p>スイカ</p>
                     <p>¥700</p>
                 </div>
               </div>
                 <div class="product">
-                 <img src="img/peach.png" alt="ピーチ"  class="product__img">
+                 <img src="{{asset("storage/photos/peach.png" )}}" alt="ピーチ"  class="product__img">
                    <div class="product__description">
                     <p>ピーチ</p>
                     <p>¥1000</p>
                 </div>
               </div>
                 <div class="product">
-                 <img src="img/muscat.png" alt="シャインマスカット"  class="product__img">
+                 <img src="{{asset("storage/photos/muscat.png" )}}" alt="シャインマスカット"  class="product__img">
                   <div class="product__description">
                     <p>シャインマスカット</p>
                     <p>¥1400</p>
