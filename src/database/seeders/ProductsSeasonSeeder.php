@@ -99,7 +99,7 @@ class ProductsSeasonSeeder extends Seeder
             ],
         ];
 
-             // ProductデータをProductsテーブルに挿入
+             // ProductsデータをProductsテーブルに挿入
         foreach ($products as $productData) {
                 $product = Product::create([
                 'name' => $productData['name'],

@@ -14,14 +14,16 @@
 
           <!-- 左側: 商品画像とファイル選択 -->
             <div class="product-image">
+                <form action="" method="POST" enctype="multipart/form-data">
                 <img src="{{asset("storage/photos/kiwi.png" )}}" alt="">
                 <label for="file-upload" class="product-image__label">ファイルを選択</label>
                 <input type="file" id="file-upload">
+                </form>
             </div>
 
             <!-- 右側: 商品名、値段、季節 -->
             <div class="product-info">
-                <form action="#" method="POST">
+                <form action="" method="POST">
                     <div class="form-group">
                         <label class="product-info__label" for="product-name">商品名</label>
                         <input class="product-info__input" type="text" id="product-name" name="product-name" placeholder="キウイ">
@@ -35,10 +37,10 @@
                     <div class="form-group">
                         <label class="product-info__label" >季節</label>
                         <div class="checkbox-group">
-                            <label><input type="checkbox" name="season" value="spring" checked> 春</label>
-                            <label><input type="checkbox" name="season" value="summer"> 夏</label>
-                            <label><input type="checkbox" name="season" value="autumn"> 秋</label>
-                            <label><input type="checkbox" name="season" value="winter"> 冬</label>
+                            <label><input type="checkbox" name="seasons[]" value="spring" checked> 春</label>
+                            <label><input type="checkbox" name="seasons[]" value="summer"> 夏</label>
+                            <label><input type="checkbox" name="seasons[]" value="autumn"> 秋</label>
+                            <label><input type="checkbox" name="seasons[]" value="winter"> 冬</label>
                         </div>
                     </div>
                 </form>
@@ -47,7 +49,7 @@
 
         <!-- 下側:商品説明 -->
         <div class="product-description">
-            <form action="#" method="POST">
+            <form action="" method="POST">
                 <div class="form-group">
                     <label  class="product-description__label" for="product-description">商品説明</label>
                     <textarea class="product-description__input" id="product-description" name="product-description" placeholder="爽やかな香りと上品な甘みが特徴的なキウイは大人から子どもまで人気のフルーツです。疲れた脳や体のエネルギー補給にも最適の商品です。もぎたてフルーツのスムージーをお召し上がりください！"></textarea>
