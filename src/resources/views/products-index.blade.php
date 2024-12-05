@@ -9,7 +9,7 @@
     @section('content')
     <div class="top">
       <h2>商品一覧</h2>
-      <button class="top__add-product-button">+ 商品を追加</button>
+      <a href="{{route("products.create")}}"><button class="top__add-product-button">+ 商品を追加</button></a>
     </div>
 
         <section class="layout-container">

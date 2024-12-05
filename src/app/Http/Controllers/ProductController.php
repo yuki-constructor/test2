@@ -23,6 +23,34 @@ class ProductController extends Controller
         return view("products-index", ["products" => $products]);
     }
 
+
+    // 商品登録画面表示
+    public function create()
+    {
+        $seasons = Season::all();
+        return view("products-create", ["seasons" => $seasons]);
+    }
+
+
+    // 商品登録処理
+    public function store(ProductRequest $request)
+    {
+        $savedfilepath = basename($request->file("image")->store("photos", "public"));
+        $product = new Product($request->validated());
+        $product["image"] = $savedfilepath;
+        $product->save();
+        // $product->seasons()->sync($product->seasons);
+        $product->seasons()->sync($request->input('seasons', []));
+
+        // $product=$request->velidated();
+        // $product["image"]=basename($request->file("image")->store("photo","public"));
+        // Product::create($product);
+
+        return to_route("products.index");
+    }
+
+
+
     // 商品詳細画面表示
     public function edit($productId)
     {
@@ -57,16 +85,6 @@ class ProductController extends Controller
     }
 
 
-    // 商品登録画面表示
-    public function create()
-    {
-        return view("products-create");
-    }
-
-
-
-    // 商品登録処理
-    public function store() {}
 
 
     // 検索
