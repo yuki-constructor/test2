@@ -1,23 +1,4 @@
-/* 全体レイアウト */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-  }
 
-  header {
-    padding: 20px;
-  }
-
-  .logo {
-    color: #f9bd25;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    font-family:  "Times New Roman";
-    font-style:italic;
-  }
 
   /* パンくずリスト */
   .breadcrumb {
@@ -56,20 +37,26 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    color: #333;
+    color: #555;
     border: 1px solid #ccc;
-    max-width: 30%;
+    /* max-width: 30%; */
+    width: 100px;
+    height: 20px;
   }
 
   .product-image__label:hover {
     background-color: #888585;
   }
 
-  #file-upload {
+  .product-image__input {
     display: none;
   }
 
   /* 商品情報 */
+   .form-group{
+    margin: 5px 0px 20px 0px;
+  }
+
   .product-info {
     grid-column: 2/3;
     /* display: grid;
@@ -80,16 +67,15 @@ body {
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
-    color: #555;
   }
 
   .product-info__input {
     width: 100%;
     padding: 10px;
-    margin: 5px 0px 20px 0px;
+    margin: 5px 0px 0px 0px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
+    }
 
 
   .checkbox-group {
@@ -102,8 +88,7 @@ body {
     display: inline-flex;
     align-items: center;
     font-size: 14px;
-    color: #555;
-  }
+    }
 
   .checkbox-group input {
     margin-right: 5px;
@@ -120,7 +105,6 @@ body {
     display: block;
       font-size: 14px;
       margin-bottom: 5px;
-      color: #555;
   }
 
   .product-description__input {
@@ -186,4 +170,4 @@ body {
     font-size: 20px;
     cursor: pointer;
     font-weight:bold;
-  } 
+  }

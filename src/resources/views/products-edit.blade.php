@@ -8,6 +8,41 @@
 
 @section('content')
 
+
+
+{{-- ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ --}}
+{{-- バリデーション確認 --}}
+
+{{-- 全てのエラー取得・表示 --}}
+@if($errors->any())
+<div >
+  <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{$error}}</li>
+    @endforeach
+ </ul>
+</div>
+@endif
+
+{{-- 特定のエラー取得・表示（$errors変数使用） --}}
+@if($errors->has("seasons"))
+<div >
+  <ul>
+      @foreach ($errors->get("seasons") as $error)
+        <li>{{$error}}</li>
+    @endforeach
+ </ul>
+</div>
+@endif
+
+{{-- 特定のエラー取得・表示（@errorディレクティブ・$messag変数使用） --}}
+@error("seasons")
+<p >{{ $message}}</p>
+@enderror
+
+{{-- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ --}}
+
+
     <form action="{{route("products.update",["productId" => $product->id])}}" method="POST" enctype="multipart/form-data" class="grid-layout">
         @csrf
     <div class="breadcrumb">
@@ -19,7 +54,17 @@
 
                     <img src="{{asset("storage/photos/".$product->image )}}" alt="{{$product->name}}" class="product__img">
                 <label for="file-upload" class="product-image__label">ファイルを選択</label>
-                <input type="file" id="product-image" name="image">
+                <input type="file" class="product-image__input" id="product-image" name="image">
+                 {{-- エラーメッセージ --}}
+                 @if($errors->has("image"))
+                 <div class="error-message">
+                 <ul>
+                     @foreach ($errors->get("image") as $error)
+                         <li>{{$error}}</li>
+                     @endforeach
+                 </ul>
+                 </div>
+                 @endif
 
             </div>
 
@@ -28,12 +73,32 @@
 
                     <div class="form-group">
                         <label class="product-info__label" for="product-name">商品名</label>
-                        <input class="product-info__input" type="text" id="product-name" name="name" placeholder="{{$product->name}}">
+                        <input class="product-info__input" type="text" id="product-name" name="name" value="{{$product->name}}">
+                        {{-- エラーメッセージ --}}
+                        @if($errors->has("name"))
+                        <div class="error-message">
+                        <ul>
+                            @foreach ($errors->get("name") as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                        </div>
+                        @endif
                     </div>
 
                     <div class="form-group">
                         <label class="product-info__label" for="product-price">値段</label>
-                        <input class="product-info__input" type="text" id="product-price" name="price" placeholder="{{$product->price}}">
+                        <input class="product-info__input" type="text" id="product-price" name="price" value="{{$product->price}}">
+                         {{-- エラーメッセージ --}}
+                         @if($errors->has("price"))
+                         <div class="error-message">
+                         <ul>
+                             @foreach ($errors->get("price") as $error)
+                                 <li>{{$error}}</li>
+                             @endforeach
+                         </ul>
+                         </div>
+                         @endif
                     </div>
 
                     <div class="form-group">
@@ -43,7 +108,16 @@
                             {{-- <label><input type="checkbox" name="seasons[]" value="{{$season->name}}">{{$season->name}}</label> --}}
                             <label><input type="checkbox" name="seasons[]" value="{{$season->name}}" @if (in_array($season->id,old("seasons",$product->seasons->pluck("id")->all()))) checked @endif>{{$season->name}}</label>
                             @endforeach
-
+                             {{-- エラーメッセージ --}}
+                        @if($errors->has("seasons"))
+                        <div class="error-message">
+                        <ul>
+                            @foreach ($errors->get("seasons") as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                        </div>
+                        @endif
                         </div>
                     </div>
 
@@ -54,8 +128,19 @@
         <div class="product-description">
                 <div class="form-group">
                     <label  class="product-description__label" for="product-description">商品説明</label>
-                    <textarea class="product-description__input" id="product-description" name="description" placeholder="{{$product->description}}"></textarea>
+                    <textarea class="product-description__input" id="product-description" name="description" >{{$product->description}}</textarea>
+                     {{-- エラーメッセージ --}}
+                     @if($errors->has("description"))
+                     <div class="error-message">
+                     <ul>
+                         @foreach ($errors->get("description") as $error)
+                             <li>{{$error}}</li>
+                         @endforeach
+                     </ul>
+                     </div>
+                     @endif
                 </div>
+
                 <div class="form__button">
                 <div class="form__button--center">
                     <a href="{{route("products.index")}}"><button type="button" class="form__cancel-button">戻る</button></a>

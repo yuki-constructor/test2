@@ -47,7 +47,7 @@ class ProductController extends Controller
         }
         $product->update($updateData);
 
-        return to_route("products-index");
+        return to_route("products.index");
     }
 
 
