@@ -3,7 +3,7 @@
     @section('title', '商品一覧')
 
     @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/products.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/products-index.css') }}">
     @endpush
 
     @section('content')
@@ -31,6 +31,7 @@
 
             <section class="product-list">
                 @foreach($products as $product)
+                <a href="{{ route("products.edit", ["productId" => $product->id]) }}" >
                  <div class="product">
                    <img src="{{asset("storage/photos/".$product->image )}}" alt="{{$product->name}}" class="product__img">
                    <div class="product__description">
@@ -38,6 +39,7 @@
                     <p>{{$product->price}}</p>
                    </div>
                  </div>
+                </a>
                 @endforeach
                  </div>
             </section>
