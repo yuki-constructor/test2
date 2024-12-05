@@ -18,7 +18,8 @@ class ProductController extends Controller
     // 商品一覧画面表示
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(6);
+        // $products = Product::all();
 
         return view("products-index", ["products" => $products]);
     }

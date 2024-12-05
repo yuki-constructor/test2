@@ -45,11 +45,16 @@
             </section>
         </section>
 
-        <div class="pagination">
+        {{-- <div class="pagination">
             <button>&laquo;</button>
             <button class="active">1</button>
             <button>2</button>
             <button>3</button>
             <button>&raquo;</button>
+        </div> --}}
+
+        <div class="pagination">
+            {{ $products->links() }}
         </div>
+
     @endsection
