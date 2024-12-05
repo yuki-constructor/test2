@@ -40,12 +40,18 @@ class ProductController extends Controller
 
         // 画像を変更する場合
         if ($request->has("image")) {
-            // 変更前の画像を削除
+            // 変更前の画像をstrage>app>public>photo ディレクトリから削除
             Storage::disk("public")->delete($product->image);
-            // 変更後の画像をアップロード、保存パスを更新対象データにセット
-            $updateData["image"] = $request->file("image")->store("photos", "public");
+            // 変更後の画像をstrage>app>public>photo ディレクトリに保存、ファイルパスを $updateData["image"]にセット
+            $updateData["image"] = basename($request->file("image")->store("photos", "public"));
+            // $updateData["image"] = $request->file("image")->store("photos", "public");
         }
+
+        // productsテーブルのデータを更新
         $product->update($updateData);
+        // 中間テーブル（product_season テーブル）のデータを更新
+        $product->seasons()->sync($updateData["seasons"]);
+        // $product->seasons()->attach($updateData["seasons"]);
 
         return to_route("products.index");
     }

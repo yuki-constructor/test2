@@ -7,42 +7,6 @@
 @endpush
 
 @section('content')
-
-
-
-{{-- ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ --}}
-{{-- バリデーション確認 --}}
-
-{{-- 全てのエラー取得・表示 --}}
-@if($errors->any())
-<div >
-  <ul>
-      @foreach ($errors->all() as $error)
-        <li>{{$error}}</li>
-    @endforeach
- </ul>
-</div>
-@endif
-
-{{-- 特定のエラー取得・表示（$errors変数使用） --}}
-@if($errors->has("seasons"))
-<div >
-  <ul>
-      @foreach ($errors->get("seasons") as $error)
-        <li>{{$error}}</li>
-    @endforeach
- </ul>
-</div>
-@endif
-
-{{-- 特定のエラー取得・表示（@errorディレクティブ・$messag変数使用） --}}
-@error("seasons")
-<p >{{ $message}}</p>
-@enderror
-
-{{-- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ --}}
-
-
     <form action="{{route("products.update",["productId" => $product->id])}}" method="POST" enctype="multipart/form-data" class="grid-layout">
         @csrf
     <div class="breadcrumb">
@@ -53,8 +17,8 @@
             <div class="product-image">
 
                     <img src="{{asset("storage/photos/".$product->image )}}" alt="{{$product->name}}" class="product__img">
-                <label for="file-upload" class="product-image__label">ファイルを選択</label>
-                <input type="file" class="product-image__input" id="product-image" name="image">
+                <label for="product-image" class="product-image__label">ファイルを選択
+                <input type="file" class="product-image__input" id="product-image" name="image"></label>
                  {{-- エラーメッセージ --}}
                  @if($errors->has("image"))
                  <div class="error-message">
@@ -106,7 +70,7 @@
                         <div class="checkbox-group">
                             @foreach($seasons as $season)
                             {{-- <label><input type="checkbox" name="seasons[]" value="{{$season->name}}">{{$season->name}}</label> --}}
-                            <label><input type="checkbox" name="seasons[]" value="{{$season->name}}" @if (in_array($season->id,old("seasons",$product->seasons->pluck("id")->all()))) checked @endif>{{$season->name}}</label>
+                            <label><input type="checkbox" name="seasons[]" value="{{$season->id}}" @if (in_array($season->id,old("seasons",$product->seasons->pluck("id")->all()))) checked @endif>{{$season->name}}</label>
                             @endforeach
                              {{-- エラーメッセージ --}}
                         @if($errors->has("seasons"))
