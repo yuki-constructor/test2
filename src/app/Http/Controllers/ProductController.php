@@ -89,7 +89,22 @@ class ProductController extends Controller
 
 
     // 検索
-    public function search() {}
+    public function search(Request $request)
+    {
+
+        // $products = Product::paginate(6);
+        $products = Product::query();
+
+        $keyword = $request->input("name");
+
+        if (!empty($keyword)) {
+            $products->where("name", "LIKE", "%{$keyword}%");
+        }
+
+        $products = $products->paginate(6);
+
+        return view("products-index", ["products" => $products]);
+    }
 
 
 

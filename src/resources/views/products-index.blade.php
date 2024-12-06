@@ -14,11 +14,13 @@
 
         <section class="layout-container">
             <aside class="search-and-sort">
+                <form action="{{route("products.search")}}" method="GET">
                 <div class="search-box">
                     <label for="search"  class="sort-box__label--hidden">商品名で検索</label>
-                    <input class="search-box__input" type="text" id="search" placeholder="商品名で検索" >
-                    <a href="{{route("products.search")}}"><button class="search-and-sort__button">検索</button></a>
+                    <input class="search-box__input" type="text" id="search" name="name" placeholder="商品名で検索" >
+                    <button type="submit" class="search-and-sort__button">検索</button>
                 </div>
+            </form>
                 <div class="sort-box">
                     <label for="sort" class="sort-box__label">価格順で表示</label>
                     <select id="sort" class="sort-box__select">
@@ -27,6 +29,7 @@
                         <option value="desc">高い順に表示</option>
                     </select>
                 </div>
+
             </aside>
 
             <section class="product-list">
