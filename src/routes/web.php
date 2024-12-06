@@ -24,10 +24,10 @@ Route::post("/products/{productId}/update",[ProductController::class,"update"])-
 
 
 
-// 検索
+// 検索処理
 Route::get("/products/search",[ProductController::class,"search"])->name("products.search");
 
-// 削除
+// 削除処理
 Route::get("/products/{productId}/delete",[ProductController::class,"destroy"])->name("product.destroy");
 
 

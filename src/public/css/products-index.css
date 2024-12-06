@@ -1,16 +1,5 @@
 /* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-  }
 
-  header {
-    padding: 20px;
-    font-size: 24px;
-    }
 
    main {
       padding: 20px;
@@ -22,15 +11,6 @@ body {
     align-items: center;
    }
 
-
-  .logo {
-    color:#f9bd25;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    font-family:  "Times New Roman";
-    font-style:italic;
-  }
 
   .top__add-product-button {
     background-color: #f9a825;
@@ -44,8 +24,6 @@ body {
   .top__add-product-button:hover {
     background-color: #c78819;
   }
-
-
 
   .layout-container {
     display: flex;
@@ -65,11 +43,29 @@ body {
     margin-bottom: 20px;
   }
 
-  .sort-box__label{
-    /* height:0;
+  /* .sort-box__label--hidden{
+    height:0;
     width:0;
-    overflow:hidden; */
+    overflow:hidden;
     display:none;
+    visibility: hidden;
+    position: absolute;
+  } */
+
+  .sort-box__label--hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+  .sort-box__label{
+    font-weight: bold;
   }
 
   .search-box__input {
@@ -156,7 +152,7 @@ body {
     margin: 10px 0;
   } */
 
-  
+
   .pagination {
     display: flex;
     justify-content: center;

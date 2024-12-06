@@ -111,7 +111,8 @@
                     <button type="submit" class="form__submit-button">変更を保存</button>
                   </div>
                   <div class="form__button--right">
-                    <button type="button" class="form__delete-button" title="削除">&#128465;</button>
+                    <a href="{{ route("products.edit", ["productId" => $product->id]) }}" >
+                    <a href="{{route("product.destroy",["productId"=>$product->id])}}"><button type="button" class="form__delete-button" title="削除">&#128465;</button></a>
                 </div>
               </div>
 

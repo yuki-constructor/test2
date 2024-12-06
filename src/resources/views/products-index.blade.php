@@ -15,14 +15,14 @@
         <section class="layout-container">
             <aside class="search-and-sort">
                 <div class="search-box">
-                    <label for="search"  class="sort-box__label">商品名で検索</label>
+                    <label for="search"  class="sort-box__label--hidden">商品名で検索</label>
                     <input class="search-box__input" type="text" id="search" placeholder="商品名で検索" >
                     <button class="search-and-sort__button">検索</button>
                 </div>
                 <div class="sort-box">
-                    <label for="sort">価格順で表示</label>
+                    <label for="sort" class="sort-box__label">価格順で表示</label>
                     <select id="sort" class="sort-box__select">
-                      <option value="" selected hidden >価格で並べ替え</option>
+                      <option value="" selected  disabled>価格で並べ替え</option>
                         <option value="asc">安い順に表示</option>
                         <option value="desc">高い順に表示</option>
                     </select>

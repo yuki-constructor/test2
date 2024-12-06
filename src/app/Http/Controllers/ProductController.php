@@ -94,5 +94,18 @@ class ProductController extends Controller
 
 
     // 削除
-    public function destroy() {}
+    public function destroy($productId)
+    {
+
+        $product = Product::findorfail($productId);
+        // 中間テーブルのデータ削除
+        // $product->seasons()->delete();
+        $product->seasons()->detach();
+        // productsテーブルのデータ削除
+        $product->delete();
+        // strage>app>public>photo ディレクトリから画像削除
+        Storage::disk("public")->delete("photos/" . $product->image);
+
+        return to_route("products.index");
+    }
 }
