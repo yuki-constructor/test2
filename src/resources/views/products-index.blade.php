@@ -17,7 +17,7 @@
                 <div class="search-box">
                     <label for="search"  class="sort-box__label--hidden">商品名で検索</label>
                     <input class="search-box__input" type="text" id="search" placeholder="商品名で検索" >
-                    <button class="search-and-sort__button">検索</button>
+                    <a href="{{route("products.search")}}"><button class="search-and-sort__button">検索</button></a>
                 </div>
                 <div class="sort-box">
                     <label for="sort" class="sort-box__label">価格順で表示</label>
