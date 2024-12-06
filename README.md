@@ -82,6 +82,7 @@ chmod -R 777 www/.* （PHPコンテナ内に入っている場合は、こちら
 
 # 使用技術(実行環境)
 Laravel Framework 11.3.2
+
 PHP 8.2 以上
 
 # ER図
