@@ -148,32 +148,13 @@
     margin: 10px 0;
   }
 
-  /* .product p {
-    margin: 10px 0;
-  } */
-
-
   .pagination {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+    margin-top: 30px ;
+    text-align: center
   }
 
-  .pagination button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    cursor: pointer;
-  }
-
-  .pagination button.active {
-    background-color: #f9a825;
-    color: white;
-    border: none;
-  }
-
-  .pagination button:hover {
-    background-color: #f1f1f1;
+  svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
   }

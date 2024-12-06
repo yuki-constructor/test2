@@ -9,6 +9,7 @@
 @section('content')
     <form action="{{route("products.update",["productId" => $product->id])}}" method="POST" enctype="multipart/form-data" class="grid-layout">
         @csrf
+        @method("PATCH")
     <div class="breadcrumb">
         <a href="{{route("products.index")}}">商品一覧</a> &gt; <span>{{ $product->name }}</span>
     </div>
@@ -113,6 +114,11 @@
                   <div class="form__button--right">
                     <a href="{{ route("products.edit", ["productId" => $product->id]) }}" >
                     <a href="{{route("product.destroy",["productId"=>$product->id])}}"><button type="button" class="form__delete-button" title="削除">&#128465;</button></a>
+                    {{-- <form action="{{ route('product.destroy', ['productId' => $product->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="form__delete-button" title="削除">&#128465;</button>
+                    </form> --}}
                 </div>
               </div>
 
