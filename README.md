@@ -1,6 +1,6 @@
 # test2
 # アプリケーション名
-お問い合わせフォーム
+基礎学習ターム 確認テスト_もぎたて
 
 # 環境構築
 ## ⓵リポジトリをクローン
@@ -84,7 +84,7 @@ Laravel Framework 11.3.2
 PHP 8.2 以上
 
 # ER図
-ER図
+![teat-2-er](https://github.com/user-attachments/assets/c94ea3e9-8d71-4738-8b4c-54bb7b04da71)
 
 # URL
 開発環境：git@github.com:yuki-constructor/test2.git
