@@ -13,7 +13,7 @@
         @csrf
         <div class="form-group">
             <label for="product-name">商品名 <span class="form-required">必須</span></label>
-            <input class="form__input" type="text" id="product-name" name="name" placeholder="商品名を入力" >
+            <input class="form__input" type="text" id="product-name" name="name" placeholder="商品名を入力" value="{{old("name")}}">
             <div>
                 {{-- エラーメッセージ --}}
                 @if($errors->has("name"))
@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
             <label for="price">値段 <span class="form-required">必須</span></label>
-            <input class="form__input" type="text" id="product-price" name="price" nanaplaceholder="値段を入力">
+            <input class="form__input" type="text" id="product-price" name="price" placeholder="値段を入力" value="{{old("price")}}">
              {{-- エラーメッセージ --}}
              @if($errors->has("price"))
              <div class="error-message">
@@ -65,7 +65,7 @@
         </div>
         <div class="form-group">
             <label for="description">商品説明 <span class="form-required">必須</span></label>
-            <textarea class="form__input" id="product-description" name="description" placeholder="商品の説明を入力" ></textarea>
+            <textarea class="form__input" id="product-description" name="description" placeholder="商品の説明を入力" >{{old("description")}}</textarea>
             {{-- エラーメッセージ --}}
             @if($errors->has("description"))
             <div class="error-message">
