@@ -77,6 +77,7 @@ http://localhost にアクセスすることで、アプリケーションが動
 もし、エラーとなった場合、storageとbootstrap/cacheディレクトリ書き込み権限を設定することで改善するか確認してください。
 
 sudo chmod -R 777 src/*
+
 chmod -R 777 www/.* （PHPコンテナ内に入っている場合は、こちらを実行）
 
 # 使用技術(実行環境)
